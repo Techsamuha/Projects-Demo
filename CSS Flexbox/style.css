@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap');
+.division{
+    margin: 0;
+    padding: 20px;
+    height: 50vh;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: black;
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+    /* flex-wrap: nowrap; */
+    /* flex-wrap: wrap; */
+    flex-flow: column-reverse wrap-reverse;
+    justify-content: start;
+}
+
+.red{
+    height: 10vh;
+    width: 25%;
+    flex-grow: 1;
+    background-color: maroon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.green{
+    display: flex;
+    width: 25%;
+    align-items: center;
+    flex-grow: 2;
+    justify-content: center;
+    height: 10vh;
+    background-color: green;
+}
+
+.blue{
+    display: flex;
+    width: 25%;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: skyblue;
+}
+
+.margin-10{
+    margin: 10px;
+}
+
+#header{
+    font-size: 72px;
+    font-family: 'Lato', sans-serif;
+    color: green;
+    text-align: center;
+}

@@ -7,11 +7,20 @@ h1{
     text-align: center;
     font-size: 68px;
 }
+.text{
+    margin: 5%;
+    text-align: center;
+}
+.image{
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+}
 .green{
     color: green;
 }
 .blue{
-    color: skyblue;
+    color: rgb(5, 51, 110);
 }
 .red{
     color: maroon;

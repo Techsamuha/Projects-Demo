@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS DOM</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Java Script <span class="green">D</span><span class="blue">O</span><span class="red">M</span>(<span class="green">D</span>ocument <span class="blue">O</span>bject <span class="red">M</span>odel)</h1>
 
+<body>
+    <h1>Java Script <span class="green">D</span><span class="blue">O</span><span class="red">M</span>(<span
+            class="green">D</span>ocument <span class="blue">O</span>bject <span class="red">M</span>odel)</h1>
+    <div class="main">
+        <div class="text">
+            <h2 id="demoText">This is a demo text.</h2>
+        </div>
+        <div class="image">
+            <img id="demoImg" src="./js.png" alt="demo js image" />
+        </div>
+        <!-- for explaining problem in DOM selector using className when multiple element uses same class name -->
+        <!-- <div class="image">
+            <img  src="./css.png" alt="demo js image" />
+        </div>
+        <div class="image">
+            <img  src="./yt.png" alt="demo js image" />
+        </div> -->
+    </div>
+    <script>
+        // Internal JS 
+        // client side scripting done here.
+
+        // accessing DOM element by ID = demoText
+        let demo_text = document.getElementById('demoText');
+        // accessing DOM element by ID = demoImg
+        let demo_img = document.getElementById('demoImg');
+        console.log("This is selected by Id:",demo_img);
+        
+
+        // accessing DOM element using class name:
+        let image_div = document.getElementsByClassName('image');
+        console.log("This is selected by classname:",image_div);
+        // Since the selection using classname give us collection or object so we must use format of array with index for modifying the element i.e.
+        // For changing content we must use : image_div[index_of_desired_element] 
+
+        // DOM content changing.
+        demo_text.innerText = "This is DOM changed text.";
+        console.log("This is inside division with class = image:",image_div[0].innerHTML);
+        
+        // DOM style changing. 
+        demo_text.style.fontSize = '48px';
+        demo_text.style.color = "blue";
+        // use DOM style changing to change background color
+        image_div[0].style.background = "skyblue";
+
+        // removing demo text element from HTML
+        // demo_text.remove();
+    </script>
 </body>
+
 </html>

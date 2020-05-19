@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- using the onload event in body tag -->
+<body onload="loadFunction()">
+<!-- <body> -->
+    <h1>Java Script <span class="green">D</span><span class="blue">O</span><span class="red">M</span>(<span
+            class="green">D</span>ocument <span class="blue">O</span>bject <span class="red">M</span>odel) Events</h1>
+    <div class="main">
+        <div class="text">
+            <!-- <h2 id="demoText" >This is a demo text.</h2> -->
+            <h2 id="demoText" onmouseover="hoverFunction()" >This is a demo text.</h2>
+        </div>
+        <!-- <button id="click">Click Me</button> -->
+        <!-- Using HTML DOM -->
+        <button id="click" onclick="clickFunction()">Click Me</button>  
+    </div>
+    <script>
+        // Internal JS 
+        // client side scripting done here.
+        
+        // User Interactive application 
+        // use of button is also an event.
+        // many events in JS DOM but we will only discuss main 5 of them.
+
+        // 1. Click Event
+        // 2. Mouse over or hover Event
+        // 3. Scroll Event
+        // 4. Resize Event
+        // 5. Load Event
+
+        // 3 ways to trigger any events:
+        // 1. Using HTML DOM
+        // 2. Using JS DOM
+        // 3. Using addEventListener in JS script [new way]
+
+        // Event Trigger using HTML DOM:
+        // SYNTAX: <element event_name="function_to_trigger()">
+
+        // Event Trigger using JS DOM:
+        // SYNTAX: DOM_object.event_name = function_to trigger(){
+            // ...script... 
+        // }
+
+        // Event Trigger using JS DOM:
+        // SYNTAX: DOM_object.addEventListener("event_name",function_to_trigger) 
+
+        function clickFunction(){
+            console.log("Here , things to do after button is clicked is written.");
+            // Here alert is builtin function of JS used to display information to user /client promptly
+            alert("You clicked the button")
+        }
+
+        function hoverFunction(){
+            console.log("Here , things to do after text is hovered is written.");
+            txt.style.color = 'green';
+        }
+
+        function scrollFunction(){
+            console.log("Here , things to do after element is scrolled is written.");
+        }
+
+        function resizeFunction(){
+            console.log("Here , things to do after document is resized is written.");
+            // Here window.innerWidth gives width of window where site is being displayed
+            // Here window.innerHeight gives height of window where site is being displayed
+            console.log("your window size is:",window.innerWidth + "x" + window.innerHeight);
+        }
+
+        function loadFunction(){
+            console.log("Here , things to do after element is loaded is written.");
+        }
+
+        // // Click event:
+        // let btnClick = document.getElementById('click');
+        // btnClick.onclick = function(){clickFunction()}; //calling our actual function inside anonymous function when event is occured
+        // btnClick.addEventListener("click",clickFunction); //Using addEventListener
+
+        let txt = document.getElementById('demoText');
+        // txt.onmouseover = function(){hoverFunction()};
+        // txt.addEventListener("mouseover",hoverFunction);
+
+        // // here window refers to the whole website
+        window.onscroll = function(){scrollFunction()};
+        // // window.addEventListener("scroll",scrollFunction);
+
+        window.onresize = function(){resizeFunction()};
+        // // window.addEventListener("resize",resizeFunction);
+
+        // window.onload = function(){loadFunction()};
+        // // window.addEventListener("load",loadFunction);
+
+    </script>
+</body>
+
+</html>
